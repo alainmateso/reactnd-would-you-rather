@@ -24,12 +24,12 @@ body {
 }
 
 .btn {
-  background-color: #019b96;
+  background-color: $primary-green;
   color: white;
   padding: 7px 20px;
   border: none;
   border-radius: 3px;
 }
 .btn:hover {
-  background-color: #007b77;
+  background-color: $hover-green;
 }
