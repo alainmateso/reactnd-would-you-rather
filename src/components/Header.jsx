@@ -25,7 +25,7 @@ export class Header extends Component {
           </NavLink>
           <NavLink to="" className="nav-item">
             <span>
-              Hello, {this.props.authedUser}
+              Hello, {user.name}
               <img
                 src={user.avatarURL}
                 alt={`Avatar of ${user.name}`}

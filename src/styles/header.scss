@@ -2,9 +2,7 @@
   margin-bottom: -20%;
   padding: 15px 30px;
   border-bottom: 3px solid $hover-green;
-  width: 100%;
-  position: fixed;
-  z-index: -1;
+  width: 100vw;
   .nav-links {
     .nav-item {
       display: inline-block;
@@ -18,7 +16,7 @@
       background-color: $hover-green;
       color: white;
     }
-    .nav-item:active{
+    .nav-item:active {
       background-color: $primary-green;
     }
     .avatar {
