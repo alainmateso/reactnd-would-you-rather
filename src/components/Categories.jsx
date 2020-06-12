@@ -26,12 +26,19 @@ export class Categories extends Component {
       <div className="tabs">
         <div className="tabs-header">
           <div
-            className="tab-item selected-tab"
+            className={
+              tab === "unanswered" ? "tab-item selected-tab" : "tab-item"
+            }
             onClick={this.handleUnanswered}
           >
             Unanswered Questions
           </div>
-          <div className="tab-item" onClick={this.handleAnswered}>
+          <div
+            className={
+              tab === "answered" ? "tab-item selected-tab" : "tab-item"
+            }
+            onClick={this.handleAnswered}
+          >
             Answered Questions
           </div>
         </div>

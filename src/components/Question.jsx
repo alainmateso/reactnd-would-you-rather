@@ -8,7 +8,7 @@ export class Question extends React.Component {
 
     return (
       <div className="question">
-        <div className="card" key={question.id}>
+        <div className="card question-card" key={question.id}>
           <div className="card-header">
             <h4>{users[author].name} asks:</h4>
           </div>

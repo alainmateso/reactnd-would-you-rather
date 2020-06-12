@@ -1,14 +1,17 @@
 .question {
+  .question-card {
+    margin-top: 5px;
+    width: 95%;
+  }
   .question-body {
     display: flex;
     flex-direction: row;
-    width: 100%;
     .question-avatar {
-      height: 60px;
-      width: 60px;
-      border-right: 1px solid gray;
-      padding: 20px;
-      align-content: center;
+      height: 100px;
+      width: 100px;
+      border-right: 1px solid #cfcece;
+      margin: 0;
+      padding: 5px 20px;
       img{
         height: 100%;
         width: 100%;
@@ -16,9 +19,11 @@
       }
     }
     .question-content {
-      padding: 10px;
-      span {
-        margin: 10px 0;
+      margin: 0;
+      padding: 5px 20px;
+      width: 60%;
+      h4 {
+        margin: 0 0 15px 0;
       }
     }
     .btn-poll {
@@ -26,6 +31,7 @@
       background-color: white;
       color: $primary-green;
       border: 1px solid $primary-green;
+      margin-top: 20px;
     }
     .btn-poll:hover {
       background-color: $hover-green;
