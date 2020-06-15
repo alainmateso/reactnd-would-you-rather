@@ -11,7 +11,7 @@ body {
   border: 1px solid #cfcece;
   border-radius: 2px;
   margin: 1rem auto;
-  width: fit-content;
+  max-width: 600px;
   .card-header {
     border-bottom: 0.5px solid #cfcece;
     padding: 10px 30px;
@@ -34,3 +34,14 @@ body {
 .btn:hover {
   background-color: $hover-green;
 }
+.btn-poll {
+      width: 100%;
+      background-color: white;
+      color: $primary-green;
+      border: 1px solid $primary-green;
+      margin-top: 20px;
+    }
+    .btn-poll:hover {
+      background-color: $hover-green;
+      color: white;
+    }

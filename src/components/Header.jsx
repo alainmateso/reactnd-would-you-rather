@@ -14,16 +14,16 @@ export class Header extends Component {
     return (
       <div className="header">
         <div className="nav-links">
-          <NavLink to="" className="nav-item">
+          <NavLink to="/" className="nav-item">
             Home
           </NavLink>
-          <NavLink to="" className="nav-item">
+          <NavLink to="/add" className="nav-item">
             New question
           </NavLink>
           <NavLink to="" className="nav-item">
             Leader Board
           </NavLink>
-          <NavLink to="" className="nav-item">
+          <NavLink to="#" className="nav-item">
             <span>
               Hello, {user.name}
               <img

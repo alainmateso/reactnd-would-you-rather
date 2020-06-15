@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Home from "./Home";
 import Header from "../components/Header";
 import QuestionPage from "./QuestionPage";
+import NewQuestion from './NewQuestion'
 
 export class Dasboard extends Component {
   render() {
@@ -13,6 +14,7 @@ export class Dasboard extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/questions/:id" component={QuestionPage} />
+          <Route path="/add" component={NewQuestion} />
         </Switch>
       </Fragment>
     );

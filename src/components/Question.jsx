@@ -1,32 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-// import { handleSaveAnswer } from "../actions/questions";
+import { Link } from "react-router-dom";
 
 export class Question extends React.Component {
   state = {
     selectedOption: "",
   };
 
-  // handleChange = (e) => {
-  //   this.setState({
-  //     selectedOption: e.target.value,
-  //   });
-  // };
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const { question, authedUser, history, dispatch } = this.props;
-  //   const qid = question.id;
-  //   const answer = this.state.selectedOption;
-  //   dispatch(handleSaveAnswer({ authedUser, qid, answer }));
-  //   history.push("/");
-  // };
-
   render() {
-    const { question, users, details } = this.props;
-    const { author, optionOne, optionTwo } = question;
-    const { selectedOption } = this.state;
+    const { question, users } = this.props;
+    const { author, optionOne } = question;
 
     return (
       <div className="question">
