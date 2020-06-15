@@ -2,7 +2,8 @@ import React, { Component, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import Home from "./Home";
-import Header from '../components/Header'
+import Header from "../components/Header";
+import QuestionPage from "./QuestionPage";
 
 export class Dasboard extends Component {
   render() {
@@ -11,6 +12,7 @@ export class Dasboard extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/question/:id" component={QuestionPage} />
         </Switch>
       </Fragment>
     );

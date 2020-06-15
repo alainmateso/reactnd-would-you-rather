@@ -44,9 +44,9 @@ export class Categories extends Component {
         </div>
         <div className="tabs-body">
           {tab === "answered"
-            ? answered.map((id) => <Question key={id} id={id} />)
+            ? answered.map((id) => <Question key={id} id={id} details={false} />)
             : unanswered.map((question) => (
-                <Question key={question.id} id={question.id} />
+                <Question key={question.id} id={question.id} details={false} />
               ))}
         </div>
       </div>
