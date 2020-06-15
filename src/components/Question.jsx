@@ -1,27 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import { handleSaveAnswer } from "../actions/questions";
+// import { handleSaveAnswer } from "../actions/questions";
 
 export class Question extends React.Component {
   state = {
     selectedOption: "",
   };
 
-  handleChange = (e) => {
-    this.setState({
-      selectedOption: e.target.value,
-    });
-  };
+  // handleChange = (e) => {
+  //   this.setState({
+  //     selectedOption: e.target.value,
+  //   });
+  // };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { question, authedUser, history, dispatch } = this.props;
-    const qid = question.id;
-    const answer = this.state.selectedOption;
-    dispatch(handleSaveAnswer({ authedUser, qid, answer }));
-    history.push("/");
-  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { question, authedUser, history, dispatch } = this.props;
+  //   const qid = question.id;
+  //   const answer = this.state.selectedOption;
+  //   dispatch(handleSaveAnswer({ authedUser, qid, answer }));
+  //   history.push("/");
+  // };
 
   render() {
     const { question, users, details } = this.props;
@@ -43,43 +43,11 @@ export class Question extends React.Component {
                 />
               </div>
               <div className="question-content">
-                <h4>Would You Rather...</h4>
-                {details ? (
-                  <div>
-                    <input
-                      type="radio"
-                      name="choice"
-                      value="optionOne"
-                      checked={selectedOption === "optionOne"}
-                      onChange={this.handleChange}
-                    />
-                    <label htmlFor="optionOne">{` ${optionOne.text}`}</label>
-                    <br />
-                    <input
-                      type="radio"
-                      name="choice"
-                      value="optionTwo"
-                      checked={selectedOption === "optionTwo"}
-                      onChange={this.handleChange}
-                    />
-                    <label htmlFor="optionTwo">{` ${optionTwo.text}`}</label>
-                    <br />
-                    <button
-                      className="btn btn-poll"
-                      onClick={this.handleSubmit}
-                      disabled={!selectedOption}
-                    >
-                      Submit
-                    </button>
-                  </div>
-                ) : (
-                  <div>
+                <h3>Would You Rather...</h3>
                     <span>...{optionOne.text}...</span>
-                    <Link to={`/question/${question.id}`}>
+                    <Link to={`/questions/${question.id}`}>
                       <button className="btn btn-poll">View Poll</button>
                     </Link>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -98,4 +66,4 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(Question));
+export default connect(mapStateToProps)(Question);

@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Question from "../components/Question";
+import AnsweredQuestion from "../components/AnsweredQuestion";
+import UnansweredQuestion from '../components/UnansweredQuestion'
+import {getanswered} from '../Utils/helpers'
 
 export class QuestionPage extends Component {
+  state = {
+    tab: 'a'
+  }
   render() {
-    const { id, details } = this.props;
+    const { id, answered } = this.props;
     return (
       <div>
-        <Question id={id} details={details} />
+        {answered
+          ? <AnsweredQuestion id={id} />
+          : <UnansweredQuestion id={id} />}
       </div>
     );
   }
 }
 
-function mapStateToProps({ questions }, props) {
+function mapStateToProps({ questions, authedUser }, props) {
   const { id } = props.match.params;
-  const details = true;
+  const question = questions[id]
+  const answered = question && getanswered(question, authedUser);
   return {
     id,
-    questions,
-    details,
+    answered,
   };
 }
 

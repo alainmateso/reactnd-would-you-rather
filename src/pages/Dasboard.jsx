@@ -12,7 +12,7 @@ export class Dasboard extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/question/:id" component={QuestionPage} />
+          <Route path="/questions/:id" component={QuestionPage} />
         </Switch>
       </Fragment>
     );

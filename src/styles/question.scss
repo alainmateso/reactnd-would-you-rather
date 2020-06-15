@@ -3,7 +3,7 @@
   .question-card {
     margin-top: 5px;
     width: 95%;
-    .question-header{
+    .question-header {
       text-align: left;
     }
   }
@@ -11,14 +11,13 @@
     display: flex;
     flex-direction: row;
     .question-avatar {
-      height: 100px;
-      width: 100px;
+      display: flex;
       border-right: 1px solid #cfcece;
       margin: 0;
       padding: 5px 20px;
-      img{
-        height: 100%;
-        width: 100%;
+      img {
+        height: 100px;
+        width: 100px;
         border-radius: 50%;
       }
     }
