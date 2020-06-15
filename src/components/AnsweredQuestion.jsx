@@ -56,7 +56,7 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
   const votes = optionOne.votes.concat(optionTwo.votes);
   const totalVotes = votes.length;
   return {
-    question,
+    question: question ? question : null,
     users,
     authedUser,
     totalVotes,

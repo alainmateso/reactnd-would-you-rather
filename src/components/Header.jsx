@@ -23,19 +23,27 @@ export class Header extends Component {
           <NavLink to="/leaderboard" className="nav-item">
             Leader Board
           </NavLink>
-          <NavLink to="#" className="nav-item">
-            <span>
-              Hello, {user.name}
-              <img
-                src={user.avatarURL}
-                alt={`Avatar of ${user.name}`}
-                className="avatar"
-              />
-            </span>
-          </NavLink>
-          <NavLink to="" className="nav-item" onClick={this.handleLogout}>
-            Logout
-          </NavLink>
+          {user ? (
+            <NavLink to="#" className="nav-item">
+              <span>
+                Hello, {user.name}
+                <img
+                  src={user.avatarURL}
+                  alt={`Avatar of ${user.name}`}
+                  className="avatar"
+                />
+              </span>
+            </NavLink>
+          ) : (
+            ""
+          )}
+          {user ? (
+            <NavLink to="" className="nav-item" onClick={this.handleLogout}>
+              Logout
+            </NavLink>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );

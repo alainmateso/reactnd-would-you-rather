@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import LoadingBar from "react-redux-loading";
 import { setActiveUser } from "../actions/shared";
+import logo192 from "../assets/logo192.png";
+import Header from '../components/Header'
 
 export class Login extends Component {
   state = {
@@ -26,17 +28,20 @@ export class Login extends Component {
     return (
       <div className="login-page">
         <LoadingBar />
+        <Header />
         <div className="card">
           <div className="card-header">
             <h3>Welcome to the Would You Rather App!</h3>
-            <span>Please sign in to continue</span>
+            <p>Please sign in to continue</p>
           </div>
           <div className="card-body">
             <div className="login-form">
+              <div className="logo">
+                <img className="login-logo" src={logo192} alt="" />
+              </div>
+
               <select name="user" onChange={this.handleChange}>
-                <option selected disabled>
-                  Select User
-                </option>
+                <option defaultChecked>Select User</option>
                 {userIds &&
                   userIds.map((userId) => (
                     <option key={users[userId].id} value={userId}>

@@ -44,7 +44,9 @@ export class Categories extends Component {
         </div>
         <div className="tabs-body">
           {tab === "answered"
-            ? answered.map((id) => <Question key={id} id={id} />)
+            ? answered.map((question) => (
+                <Question key={question.id} id={question.id} />
+              ))
             : unanswered.map((question) => (
                 <Question key={question.id} id={question.id} />
               ))}
@@ -55,12 +57,14 @@ export class Categories extends Component {
 }
 
 function mapStateToProps({ questions, users, authedUser }) {
-  const answers = users[authedUser].answers;
-  const noAnswers = Object.values(questions).filter(
-    (question) => !getanswered(question, authedUser)
-  );
+  const answers = Object.values(questions)
+    .filter((question) => getanswered(question, authedUser))
+    .sort((a, b) => b.timestamp - a.timestamp);
+  const noAnswers = Object.values(questions)
+    .filter((question) => !getanswered(question, authedUser))
+    .sort((a, b) => b.timestamp - a.timestamp);
   return {
-    answered: answers.length === 0 ? [] : Object.keys(answers),
+    answered: answers.length === 0 ? [] : answers,
     unanswered: noAnswers.length === 0 ? [] : noAnswers,
     users,
     authedUser,
