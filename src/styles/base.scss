@@ -35,13 +35,24 @@ body {
   background-color: $hover-green;
 }
 .btn-poll {
-      width: 100%;
-      background-color: white;
-      color: $primary-green;
-      border: 1px solid $primary-green;
-      margin-top: 20px;
-    }
-    .btn-poll:hover {
-      background-color: $hover-green;
-      color: white;
-    }
+  width: 100%;
+  background-color: white;
+  color: $primary-green;
+  border: 1px solid $primary-green;
+  margin-top: 20px;
+}
+.btn-poll:hover {
+  background-color: $hover-green;
+  color: white;
+}
+.question-avatar {
+  display: flex;
+  border-right: 1px solid #cfcece;
+  margin: 0;
+  padding: 5px 20px;
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+}

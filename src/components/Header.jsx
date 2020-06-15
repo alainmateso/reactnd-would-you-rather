@@ -20,7 +20,7 @@ export class Header extends Component {
           <NavLink to="/add" className="nav-item">
             New question
           </NavLink>
-          <NavLink to="" className="nav-item">
+          <NavLink to="/leaderboard" className="nav-item">
             Leader Board
           </NavLink>
           <NavLink to="#" className="nav-item">
