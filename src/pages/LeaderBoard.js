@@ -5,7 +5,6 @@ import Score from "../components/Score";
 export class LeaderBoard extends Component {
   render() {
     const { sortedUsers } = this.props;
-    console.log("allUsers :>> ", sortedUsers);
 
     return (
       <div>

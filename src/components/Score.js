@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export class Score extends Component {
   render() {
-    console.log('this.props.user :>> ', this.props.user);
     const { avatarURL, name, answers, questions } = this.props.user;
     const answered = Object.keys(answers).length;
     const created = questions.length;

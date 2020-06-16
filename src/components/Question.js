@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import NotFound from './NotFound'
 
 export class Question extends React.Component {
   state = {
@@ -10,6 +11,10 @@ export class Question extends React.Component {
   render() {
     const { question, users } = this.props;
     const { author, optionOne } = question;
+
+    if (!question) {
+      return <NotFound />
+    }
 
     return (
       <div className="question">
@@ -27,10 +32,10 @@ export class Question extends React.Component {
               </div>
               <div className="question-content">
                 <h3>Would You Rather...</h3>
-                    <span>...{optionOne.text}...</span>
-                    <Link to={`/questions/${question.id}`}>
-                      <button className="btn btn-poll">View Poll</button>
-                    </Link>
+                <span>...{optionOne.text}...</span>
+                <Link to={`/questions/${question.id}`}>
+                  <button className="btn btn-poll">View Poll</button>
+                </Link>
               </div>
             </div>
           </div>
