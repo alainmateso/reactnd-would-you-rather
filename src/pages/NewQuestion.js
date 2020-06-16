@@ -54,7 +54,7 @@ export class NewQuestion extends Component {
             <button
               className="btn btn-poll"
               onClick={this.handleSubmit}
-              disabled={!optionOneText || !optionTwoText}
+              disabled={(!optionOneText || !optionTwoText) || (optionOneText === optionTwoText)}
             >
               Submit
             </button>

@@ -52,7 +52,7 @@ If the poll is answered, you'll be presented with the poll result, with your cho
 
 When logged in, you can select "New Question" from the menu bar and you'll be presented with a form to fill your desired 2 options. After submitting the form, you'll be redirected to the homepage where your asked question will be categoried according to whether you have answered it or not
 
-`Please note that the submit button won't work if any of the options is empty!`
+`Please note that the submit button won't work if any of the options is empty or if you entered similar options!`
 
 ## The Leaderboard
 
