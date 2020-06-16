@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import AnsweredQuestion from "../components/AnsweredQuestion";
 import UnansweredQuestion from '../components/UnansweredQuestion'
-import {getanswered} from '../Utils/helpers'
+import { getanswered } from '../Utils/helpers'
+import NotFound from '../components/NotFound'
 
 export class QuestionPage extends Component {
-  state = {
-    tab: 'a'
-  }
   render() {
-    const { id, answered } = this.props;
+    const { id, user, answered } = this.props;
+    if (!user) {
+      return <NotFound />;
+    }
     return (
       <div>
         {answered
@@ -20,12 +21,14 @@ export class QuestionPage extends Component {
   }
 }
 
-function mapStateToProps({ questions, authedUser }, props) {
+function mapStateToProps({ questions, users, authedUser }, props) {
   const { id } = props.match.params;
   const question = questions[id]
   const answered = question && getanswered(question, authedUser);
+  const user = question && users[question.author];
   return {
     id,
+    user,
     answered,
   };
 }
